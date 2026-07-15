@@ -28,6 +28,7 @@ jobs:
           seleniumbase install chromedriver
 
       - name: ⚙ 设置代理 (sing-box)
+        continue-on-error: true
         env:
           NODE_LINK: ${{ secrets.NODE_LINK }}
         run: |
@@ -39,6 +40,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           SESSION_TOKEN: ${{ secrets.SESSION_TOKEN }}
+          GH_COOKIE: ${{ secrets.GH_COOKIE }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: |
